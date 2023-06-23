@@ -1,8 +1,7 @@
-#include <vector>
 #include <iostream>
+#include <vector>
 
 int main() {
-
   // initializer list
   std::vector<int> vector1 = {1, 2, 3, 4, 5};
   std::vector<int> vector2{6, 7, 8, 9, 10};
@@ -14,7 +13,7 @@ int main() {
     std::cout << i << "  ";
   }
 
-  std::vector<int> num {1, 2, 3, 4, 5};
+  std::vector<int> num{1, 2, 3, 4, 5};
 
   std::cout << "Initial Vector: ";
 
@@ -32,11 +31,9 @@ int main() {
     std::cout << i << "  ";
   }
 
-
   std::cout << "Element at Index 0: " << num.at(0) << std::endl;
   std::cout << "Element at Index 2: " << num.at(2) << std::endl;
   std::cout << "Element at Index 4: " << num.at(4);
-
 
   std::cout << "Initial Vector: ";
 
@@ -68,7 +65,6 @@ int main() {
   for (int i : num) {
     std::cout << i << " ";
   }
-
 
   // declare iterator
   std::vector<int>::iterator iter;
