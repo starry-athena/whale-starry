@@ -2,9 +2,9 @@
 
 ## Vector 介绍
 
-`vector`是一种动态数组，维护的是一个线性空。同`array`相比，`array`为静态数组，一定创建了就不能改变大小，如果需要改变则需要重新创建。而`vector`的优点是会随着元素的增加而自行扩容空间用于新增元素。
+`vector`是一种动态数组，维护的是一个线性空间。同`array`相比，`array`为静态数组，创建了就不能改变大小，如果需要改变则需要重新创建。而`vector`的优点是会随着元素的增加而自行扩容空间。
 
-`vector`扩容空间以原大小的两倍另外配置一块较大的空间，然后将内容拷贝过来，然后才开始在原内容之后构造新元素，并释放原空间。
+`vector`扩容空间以原大小的两倍另外配置一块较大的空间，将内容拷贝过来，然后才开始在原内容之后构造新元素，并释放原空间。
 
 ## Vector 数据结构
 
@@ -118,8 +118,8 @@ template<typename _InputIterator>
 ## Vector 接口函数
 
 
-名称	| 说明
-- | -
+名称| 说明
+--------------| --------------
 assign	| 清除矢量并将指定的元素复制到该空矢量。
 at	| 返回对矢量中指定位置的元素的引用。
 back	| 返回对向量中最后一个元素的引用。
@@ -150,6 +150,7 @@ shrink_to_fit | 	放弃额外容量。
 size	 |  返回向量中的元素数量。
 swap	|  交换两个向量的元素。
 
+
 * push_back
 
 我们以push_back为例，一起来看看vector的内部实现
@@ -173,7 +174,7 @@ swap	|  交换两个向量的元素。
 ```
 如果内存还没有写满时，把元素直接插入成员变量`_M_finish`所指向的位置，如果已经写满了，会调用`vector`的成员函数`_M_realloc_insert`。
 
-该方法再 [libstdc++-v3/include/bits/vector.tcc](https://github.com/gcc-mirror/gcc/blob/master/libstdc++-v3/include/bits/vector.tcc#L123) 中。
+该方法在 [libstdc++-v3/include/bits/vector.tcc](https://github.com/gcc-mirror/gcc/blob/master/libstdc++-v3/include/bits/vector.tcc#L123) 中。
 
 ```cpp
 #if __cplusplus >= 201103L
